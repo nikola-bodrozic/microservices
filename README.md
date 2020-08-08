@@ -1,4 +1,4 @@
-# Express API server, MySQL service & Apline
+# Express API server, MySQL service & Alpine
 
 ## Run Docker stack
 
