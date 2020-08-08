@@ -13,9 +13,9 @@ MySQL service is running on localhost:3306 and it's used by nodejs service to ge
 ## nodejs
 
 Starts express server with API endpoints at 
-- <http://localhost:3008/task> gets data from database
-- <http://localhost:3008/users> 
-- <http://localhost:3008/users/:id>
+- http://<your-public-ip>:3008/task gets data from database
+- http://<your-public-ip>:3008/users 
+- http://<your-public-ip>:3008/users/:id
 
 ## Alpine
 
