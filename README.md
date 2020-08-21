@@ -39,7 +39,10 @@ MySQL [sampledb]> select * from tasks;
 +----+----------+
 1 row in set (0.00 sec)
 
+MySQL [sampledb]> UPDATE tasks SET title = "feed parrot" WHERE id = 1;
+
 MySQL [sampledb]> exit
+
 Bye
 
 / # curl http://<your-public-ip>:3008/task
@@ -76,4 +79,4 @@ docker-compose --file docker-compose-prod.yml up
 
 in prod version for service dbmysql port forwarding & expose keys are removed. 
 
-mysql service is not avaliable outside Docker stack, it's accessibe only from nodejs & alpine services but not from MySQL workbench.
+mysql service is not avaliable outside Docker stack, it's accessibe only from nodejs & alpine services but not from MySQL Workbench.
