@@ -1,7 +1,6 @@
 const express = require("express");
 const app = express();
 const connection = require("./database.js")
-const mysql = require('mysql')
 
 const port = 3008;
 
