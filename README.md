@@ -3,6 +3,12 @@
 ## Run Docker stack in dev mode
 
 ```sh
+cp .env.sample .env
+```
+
+set MYSQL_ROOT_PASSWORD in .env file
+
+```sh
 docker-compose up
 ```
 
