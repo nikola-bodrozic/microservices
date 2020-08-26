@@ -12,20 +12,20 @@ set MYSQL_ROOT_PASSWORD in .env file
 docker-compose up
 ```
 
-## mysql
+### mysql
 
 MySQL service is running on localhost:3306 and it's used by nodejs service to get a row from database. Database is pre populated with data from `./mysql/init.sql` script. You can connect mysql service to GUI client such as MySQL Workbench.
 
-## nodejs
+### nodejs
 
 Starts express server with API endpoints at 
 - http://your-public-ip:3008/task gets data from database
 - http://your-public-ip:3008/users 
 - http://your-public-ip:3008/users/:id
 
-## Alpine
+### Alpine
 
-has cURL & MySQL client
+has cURL & MySQL client for testing connectivty inside cluster
 
 ### Test nodejs & mysql service from alpine container
 
@@ -51,10 +51,8 @@ MySQL [sampledb]> exit
 
 Bye
 
-/ # curl http://<your-public-ip>:3008/task
-{"task":"get milk"}/ #
 / # curl http://nodejs:3008/task
-{"task":"get milk"}/ #
+{"task":"feed parrot"}/ #
 / # exit
 ```
 
@@ -76,6 +74,10 @@ Bye
 root@25d62f1a9d34:/# exit
 ```
 
+### Portainer
+
+is at http://your-public-ip:9000
+
 ## Run in prod mode
 
 ```sh
@@ -85,4 +87,4 @@ docker-compose --file docker-compose-prod.yml up
 
 in prod version for service dbmysql port forwarding & expose keys are removed. 
 
-mysql service is not avaliable outside Docker stack, it's accessibe only from nodejs & alpine services but not from MySQL Workbench.
+mysql service is not avaliable outside Docker stack, it's accessibe only from nodejs service but not from MySQL Workbench.
