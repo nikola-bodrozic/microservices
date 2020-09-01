@@ -74,9 +74,6 @@ Bye
 root@25d62f1a9d34:/# exit
 ```
 
-### Portainer
-
-is at http://your-public-ip:9000
 
 ## Run in prod mode
 
