@@ -7,6 +7,7 @@ WORKDIR /app
 ENV PATH /app/node_modules/.bin:$PATH
 
 # install app dependencies
+ARG CONFIG
 COPY package.json ./
 COPY yarn.lock ./
 RUN yarn install --network-timeout 1000000000
@@ -14,8 +15,8 @@ RUN yarn install --network-timeout 1000000000
 # add app
 COPY . ./
 
-# wait for MySQL server 
-ENV DOCKERIZE_VERSION v0.6.0
+# wait for MySQL server and pass argument during build time
+ENV DOCKERIZE_VERSION "$CONFIG"
 
 RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-alpine-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
     && tar -C /usr/local/bin -xzvf dockerize-alpine-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
