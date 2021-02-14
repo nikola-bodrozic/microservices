@@ -7,6 +7,8 @@ services:
     build:
       context: nodejs/
       dockerfile: Dockerfile
+      args:
+        CONFIG: v0.6.0
     environment:
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
     volumes:

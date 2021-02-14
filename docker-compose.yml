@@ -43,6 +43,18 @@ services:
       - my-db:/var/lib/mysql
       - ./mysql:/docker-entrypoint-initdb.d/:rw
 
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:4.8.5
+    container_name: phpmyadmin
+    environment:
+      - PMA_HOST=dbmysq
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+    restart: always
+    ports:
+      - 8080:80
+    links:
+      - dbmysql
+      
+
 volumes:
   my-db:
-    
