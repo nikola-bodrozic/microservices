@@ -14,14 +14,14 @@ docker-compose up
 
 ### mysql
 
-MySQL service is running on localhost:3306 and it's used by nodejs service to get a row from database. Database is pre populated with data from `./mysql/init.sql` script. You can connect mysql service to GUI client such as MySQL Workbench 'cause there is port forwarding. You can also access to database using phpMyAdmin at http://<your-IP>:8080/index.php
+MySQL service is running on localhost:3306 and it's used by nodejs service to get a row from database. Database is pre populated with data from `./mysql/init.sql` script. You can connect mysql service to GUI client such as MySQL Workbench 'cause there is port forwarding.
 
 ### nodejs
 
 Starts express server with API endpoints at 
-- http://your-ip:3008/task gets data from database
-- http://your-ip:3008/users 
-- http://your-ip:3008/users/:id
+- <http://localhost:3008/task> gets data from database
+- <http://localhost:3008/users> 
+- <http://localhost:3008/users/:id>
 
 ### Alpine
 
